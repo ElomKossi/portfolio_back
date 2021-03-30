@@ -6,9 +6,9 @@ from .models import Education
 
 class test_education_model(TestCase):
 
-    def setUp(self):
-        self.education = Education.objects.create(
-            title="LICENCE EN INFORMATIQUE", school="INSTITUT AFRICAIN D'INFORMATIQUE", lacation="Lomé, TOGO", duration="2014 - 2017")
+    # def setUp(self):
+    #     self.education = Education.objects.create(
+    #         title="LICENCE EN INFORMATIQUE", school="INSTITUT AFRICAIN D'INFORMATIQUE", lacation="Lomé, TOGO", duration="2014 - 2017")
 
     def test_add_a_plus_b(self):
         a = 1

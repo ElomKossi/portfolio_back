@@ -8,3 +8,4 @@ mysqlclient==2.0.1
 mixer
 pytest
 pytest-django
+python-decouple
