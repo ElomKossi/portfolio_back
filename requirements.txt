@@ -6,6 +6,8 @@ django-cors-headers==3.5.0
 mysql-connector-python==8.0.23
 mysqlclient==2.0.1
 mixer
-pytest
+pytest==6.1.1
 pytest-django
 python-decouple
+pytest-cov
+hypothesis

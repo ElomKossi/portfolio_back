@@ -174,7 +174,7 @@ class InterestGenericAPIView(generics.GenericAPIView, mixins.ListModelMixin,
         return self.destroy(request, pk)
 
 
-@api_view(['GET'])
+""" @api_view(['GET'])
 def educations():
     educations = Education.objects.all()
     serializers = EducationSerializer(educations)
@@ -213,4 +213,4 @@ def technologies():
 def interests():
     interests = Interest.objects.all()
     serializers = InterestSerializer(interests)
-    return Response(serializers.data)
+    return Response(serializers.data) """
