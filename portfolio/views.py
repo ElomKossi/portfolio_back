@@ -3,172 +3,179 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from .models import Education, Experience, Project, Skill, Technology, Interest
-from .serializers import EducationSerializer, ExperienceSerializer, ProjectSerializer, SkillSerializer, TechnologySerializer, InterestSerializer
+from .serializers import (
+    EducationSerializer,
+    ExperienceSerializer,
+    ProjectSerializer,
+    SkillSerializer,
+    TechnologySerializer,
+    InterestSerializer,
+)
 
 
-class EducationGenericAPIView(generics.GenericAPIView, mixins.ListModelMixin,
-                              mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
+class EducationGenericAPIView(
+    generics.GenericAPIView,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.CreateModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+):
 
     queryset = Education.objects.all()
     serializer_class = EducationSerializer
 
     def get(self, request, pk=None):
         if pk:
-            return Response({
-                'data': self.retrieve(request, pk).data
-            })
+            return Response({"data": self.retrieve(request, pk).data})
 
         return self.list(request)
 
     def post(self, request):
-        return Response({
-            'data': self.create(request).data
-        })
+        return Response({"data": self.create(request).data})
 
     def put(self, request, pk=None):
-        return Response({
-            'data': self.partial_update(request, pk).data
-        })
+        return Response({"data": self.partial_update(request, pk).data})
 
     def delete(self, request, pk=None):
         return self.destroy(request, pk)
 
 
-class ExperienceGenericAPIView(generics.GenericAPIView, mixins.ListModelMixin,
-                               mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
+class ExperienceGenericAPIView(
+    generics.GenericAPIView,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.CreateModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+):
 
     queryset = Experience.objects.all()
     serializer_class = ExperienceSerializer
 
     def get(self, request, pk=None):
         if pk:
-            return Response({
-                'data': self.retrieve(request, pk).data
-            })
+            return Response({"data": self.retrieve(request, pk).data})
 
         return self.list(request)
 
     def post(self, request):
-        return Response({
-            'data': self.create(request).data
-        })
+        return Response({"data": self.create(request).data})
 
     def put(self, request, pk=None):
-        return Response({
-            'data': self.partial_update(request, pk).data
-        })
+        return Response({"data": self.partial_update(request, pk).data})
 
     def delete(self, request, pk=None):
         return self.destroy(request, pk)
 
 
-class ProjectGenericAPIView(generics.GenericAPIView, mixins.ListModelMixin,
-                            mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
+class ProjectGenericAPIView(
+    generics.GenericAPIView,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.CreateModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+):
 
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
     def get(self, request, pk=None):
         if pk:
-            return Response({
-                'data': self.retrieve(request, pk).data
-            })
+            return Response({"data": self.retrieve(request, pk).data})
 
         return self.list(request)
 
     def post(self, request):
-        return Response({
-            'data': self.create(request).data
-        })
+        return Response({"data": self.create(request).data})
 
     def put(self, request, pk=None):
-        return Response({
-            'data': self.partial_update(request, pk).data
-        })
+        return Response({"data": self.partial_update(request, pk).data})
 
     def delete(self, request, pk=None):
         return self.destroy(request, pk)
 
 
-class SkillGenericAPIView(generics.GenericAPIView, mixins.ListModelMixin,
-                          mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
+class SkillGenericAPIView(
+    generics.GenericAPIView,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.CreateModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+):
 
     queryset = Skill.objects.all()
     serializer_class = SkillSerializer
 
     def get(self, request, pk=None):
         if pk:
-            return Response({
-                'data': self.retrieve(request, pk).data
-            })
+            return Response({"data": self.retrieve(request, pk).data})
 
         return self.list(request)
 
     def post(self, request):
-        return Response({
-            'data': self.create(request).data
-        })
+        return Response({"data": self.create(request).data})
 
     def put(self, request, pk=None):
-        return Response({
-            'data': self.partial_update(request, pk).data
-        })
+        return Response({"data": self.partial_update(request, pk).data})
 
     def delete(self, request, pk=None):
         return self.destroy(request, pk)
 
 
-class TechnologyGenericAPIView(generics.GenericAPIView, mixins.ListModelMixin,
-                               mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
+class TechnologyGenericAPIView(
+    generics.GenericAPIView,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.CreateModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+):
 
     queryset = Technology.objects.all()
     serializer_class = TechnologySerializer
 
     def get(self, request, pk=None):
         if pk:
-            return Response({
-                'data': self.retrieve(request, pk).data
-            })
+            return Response({"data": self.retrieve(request, pk).data})
 
         return self.list(request)
 
     def post(self, request):
-        return Response({
-            'data': self.create(request).data
-        })
+        return Response({"data": self.create(request).data})
 
     def put(self, request, pk=None):
-        return Response({
-            'data': self.partial_update(request, pk).data
-        })
+        return Response({"data": self.partial_update(request, pk).data})
 
     def delete(self, request, pk=None):
         return self.destroy(request, pk)
 
 
-class InterestGenericAPIView(generics.GenericAPIView, mixins.ListModelMixin,
-                             mixins.RetrieveModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
+class InterestGenericAPIView(
+    generics.GenericAPIView,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.CreateModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+):
 
     queryset = Interest.objects.all()
     serializer_class = InterestSerializer
 
     def get(self, request, pk=None):
         if pk:
-            return Response({
-                'data': self.retrieve(request, pk).data
-            })
+            return Response({"data": self.retrieve(request, pk).data})
 
         return self.list(request)
 
     def post(self, request):
-        return Response({
-            'data': self.create(request).data
-        })
+        return Response({"data": self.create(request).data})
 
     def put(self, request, pk=None):
-        return Response({
-            'data': self.partial_update(request, pk).data
-        })
+        return Response({"data": self.partial_update(request, pk).data})
 
     def delete(self, request, pk=None):
         return self.destroy(request, pk)

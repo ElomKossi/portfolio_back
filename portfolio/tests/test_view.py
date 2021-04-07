@@ -9,7 +9,6 @@ pytestmark = pytest.mark.django_db
 
 
 class TestEducationViews(TestCase):
-
     def setUp(self):
         self.client = APIClient()
 
@@ -42,7 +41,7 @@ class TestEducationViews(TestCase):
             "title": "Wangari",
             "school": "Maathai",
             "lacation": "Lomé TOGO",
-            "duration": "1000"
+            "duration": "1000",
         }
 
         url = reverse("education_api")
@@ -104,7 +103,6 @@ class TestEducationViews(TestCase):
 
 
 class TestExperienceViews(TestCase):
-
     def setUp(self):
         self.client = APIClient()
 
@@ -138,7 +136,7 @@ class TestExperienceViews(TestCase):
             "company": "Maathai",
             "lacation": "Lomé TOGO",
             "duration": "1000",
-            "summary": "1000"
+            "summary": "1000",
         }
 
         url = reverse("experience_api")
@@ -200,7 +198,6 @@ class TestExperienceViews(TestCase):
 
 
 class TestProjectViews(TestCase):
-
     def setUp(self):
         self.client = APIClient()
 
@@ -229,11 +226,7 @@ class TestProjectViews(TestCase):
 
     def test_project_create_works(self):
         # data
-        input_data = {
-            "title": "Wangari",
-            "duration": "1000",
-            "summary": "1000"
-        }
+        input_data = {"title": "Wangari", "duration": "1000", "summary": "1000"}
 
         url = reverse("project_api")
 
@@ -294,7 +287,6 @@ class TestProjectViews(TestCase):
 
 
 class TestSkillViews(TestCase):
-
     def setUp(self):
         self.client = APIClient()
 
@@ -386,7 +378,6 @@ class TestSkillViews(TestCase):
 
 
 class TestTechnologyViews(TestCase):
-
     def setUp(self):
         self.client = APIClient()
 
@@ -416,19 +407,14 @@ class TestTechnologyViews(TestCase):
     def test_technology_create_works(self):
         # datas
 
-        skill_input_data = {
-            "name": "Wangari-tech"
-        }
+        skill_input_data = {"name": "Wangari-tech"}
 
         skill_url = reverse("skill_api")
 
         # call the url
         skill_response = self.client.post(skill_url, data=skill_input_data)
-        
-        technology_input_data = {
-            "name": "Wangari",
-            "skill": Skill.objects.last().pk
-        }
+
+        technology_input_data = {"name": "Wangari", "skill": Skill.objects.last().pk}
 
         url = reverse("technology_api")
 
@@ -489,7 +475,6 @@ class TestTechnologyViews(TestCase):
 
 
 class TestInterestViews(TestCase):
-
     def setUp(self):
         self.client = APIClient()
 
@@ -518,9 +503,7 @@ class TestInterestViews(TestCase):
 
     def test_interest_create_works(self):
         # data
-        input_data = {
-            "name": "Wangari"
-        }
+        input_data = {"name": "Wangari"}
 
         url = reverse("interest_api")
 

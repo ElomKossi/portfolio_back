@@ -11,4 +11,8 @@ pytest-django
 python-decouple
 pytest-cov
 hypothesis
+pytest-sugar
+pytest-xdist
+pytest-black
+
 psycopg2-binary==2.8.4

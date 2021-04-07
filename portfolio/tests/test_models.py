@@ -5,6 +5,7 @@ from portfolio.models import Education, Experience, Project, Skill, Technology, 
 
 pytestmark = pytest.mark.django_db
 
+
 class test_education_model(TestCase):
 
     # def setUp(self):
@@ -32,7 +33,6 @@ class test_education_model(TestCase):
 
 
 class test_experience_model(TestCase):
-
     def test_experience_can_be_created(self):
         experience = mixer.blend(Experience)
         rslt = Experience.objects.last()
@@ -47,7 +47,6 @@ class test_experience_model(TestCase):
 
 
 class test_project_model(TestCase):
-
     def test_project_can_be_created(self):
         project = mixer.blend(Project)
         rslt = Project.objects.last()
@@ -62,7 +61,6 @@ class test_project_model(TestCase):
 
 
 class test_skill_model(TestCase):
-
     def test_skill_can_be_created(self):
         skill = mixer.blend(Skill)
         rslt = Skill.objects.last()
@@ -77,7 +75,6 @@ class test_skill_model(TestCase):
 
 
 class test_technology_model(TestCase):
-
     def test_technology_can_be_created(self):
         technology = mixer.blend(Technology)
         rslt = Technology.objects.last()
@@ -92,7 +89,6 @@ class test_technology_model(TestCase):
 
 
 class test_interest_model(TestCase):
-
     def test_interest_can_be_created(self):
         interest = mixer.blend(Interest)
         rslt = Interest.objects.last()
