@@ -86,10 +86,7 @@ WSGI_APPLICATION = "School.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": 'mysql.connector.django',
-        "NAME": "myapp",
-        "USER": "elom",
-        "HOST": "localhost",
-        "PORT": "3306",
+        "NAME": "myapp"
     }
 }
 
