@@ -1,23 +1,22 @@
-name: Django CI
+name: Pytest CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [master]
   pull_request:
-    branches: [ main ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.6]
 
     services:
       postgres:
-        image: mysql
+        image: postgres
         ports:
           - 5432:5432
         env:
@@ -26,7 +25,7 @@ jobs:
           POSTGRES_PASSWORD: postgres
 
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
-    
+
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
