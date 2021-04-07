@@ -15,16 +15,15 @@ jobs:
         python-version: [3.6]
 
     services:
-      postgres:
-        image: postgres
-        ports:
-          - 5432:5432
+      mysql:
+        image: mysql:5.7
         env:
-          POSTGRES_DB: pytest_db
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+            MYSQL_ALLOW_EMPTY_PASSWORD: yes
+            MYSQL_DATABASE: myapp
+        ports:
+            - 3306:3306
 
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
       - uses: actions/checkout@v2
