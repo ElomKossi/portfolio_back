@@ -41,4 +41,4 @@ jobs:
           pip install -r requirements.txt
       - name: Run Tests
         run: |
-          pytest --ds=School.github_settings -v --nomigrations
+          pytest --ds=portfolio_back.github_settings -v --nomigrations
