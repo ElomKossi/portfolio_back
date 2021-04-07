@@ -85,8 +85,12 @@ WSGI_APPLICATION = "School.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": 'mysql.connector.django',
-        "NAME": "myapp"
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "pytest_db",
+        "USER": "postgres",
+        "PASSWORD": config("DATABASE_PASSWORD"),
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
